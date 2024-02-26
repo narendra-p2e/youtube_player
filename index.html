@@ -206,8 +206,9 @@
 			object.position.set(x * unityToThreeScale, y * unityToThreeScale, -z * unityToThreeScale);
 			object.rotation.y = ry;
 			iframe.threeObject = object;
-			
+            console.log("Frraammee  ccaarrtteeeedd  ffoorr iinn  nnddeexx  hhttmmll");
 			unityGameInstance.SendMessage('YoutubeManager', 'IframeCreated');
+           
 			return object;
 		}
 
@@ -234,7 +235,7 @@
 
 			if (unityGameInstance) {
 				unityGameInstance.SendMessage('Player', 'ProcessInput');
-				console.log("Input Processing Started");
+				
 			}
 
 			camera.position.set(cameraPositionVector.x * unityToThreeScale, 
