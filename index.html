@@ -3,7 +3,7 @@
 	<head>
     	<meta charset="utf-8">
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    	<title>Unity WebGL Player | webgl test</title>
+    	<title>Unity WebGL Player | unity_youtube_player</title>
     	<link rel="shortcut icon" href="TemplateData/favicon.ico">
     	<link rel="stylesheet" href="TemplateData/style.css">
 		<style>
@@ -234,6 +234,7 @@
 
 			if (unityGameInstance) {
 				unityGameInstance.SendMessage('Player', 'ProcessInput');
+				console.log("Input Processing Started");
 			}
 
 			camera.position.set(cameraPositionVector.x * unityToThreeScale, 
@@ -340,7 +341,7 @@
         codeUrl: buildUrl + "/Builds.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "webgl test",
+        productName: "unity_youtube_player",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
