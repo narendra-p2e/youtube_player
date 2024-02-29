@@ -207,7 +207,7 @@
 			object.rotation.y = ry;
 			iframe.threeObject = object;
 			
-			unityGameInstance.SendMessage('YoutubeManager', 'IframeCreated');
+            unityGameInstance.SendMessage('ScreenMediaController', 'IframeCreated');
 			return object;
 		}
 
