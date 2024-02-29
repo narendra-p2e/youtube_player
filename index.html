@@ -54,9 +54,9 @@
 				}
 			}
 			else { 
-				renderer.setSize(960, 600);
-				canvas.style.width = "960px";
-		        canvas.style.height = "600px";
+				renderer.setSize(1920, 1080);
+				canvas.style.width = "1920px";
+		        canvas.style.height = "1080px";
 			}
 		})
 
@@ -161,7 +161,7 @@
 			scene.add( new YoutubeObject(id, videoIdArrayJSON, listType, listId, autoplay, loop, shuffle, width, height, x, y, z, ry) );
 		}
 
-		camera = new THREE.PerspectiveCamera(60, 960 / 600, .1, 10000);
+		camera = new THREE.PerspectiveCamera(60, 1920 / 1080, .1, 10000);
 		cameraPositionVector = new THREE.Vector3();
 		cameraRotationQuaternion = new THREE.Quaternion();
 		cameraRotationEuler = new THREE.Euler();
@@ -223,7 +223,7 @@
 				renderer.setSize(window.innerWidth, window.innerHeight);
 			}
 			else {
-				renderer.setSize(960, 600);
+				renderer.setSize(1920, 1080);
 			}
 			cssContainer.appendChild(renderer.domElement);
  		}
@@ -281,7 +281,7 @@
     <div id="unity-container" class="unity-desktop">
 		<div id="fullScreenContainer">
 			<div id="cssContainer"></div>  	
-			<canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+			<canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
 		</div>
 
 
@@ -371,8 +371,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1920px";
+        canvas.style.height = "1080px";
       }
 
       loadingBar.style.display = "block";
