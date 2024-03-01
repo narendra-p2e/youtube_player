@@ -211,7 +211,8 @@
 			object.position.set(x * unityToThreeScale, y * unityToThreeScale, -z * unityToThreeScale);
 			object.rotation.y = ry;
 			iframe.threeObject = object;
-			
+
+			console.error("Send");
             //unityGameInstance.SendMessage('ScreenMediaController', 'youtubeIframeCreated');
 			return object;
 		}
