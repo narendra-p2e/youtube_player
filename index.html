@@ -64,9 +64,8 @@
         	var tag = document.createElement('script');
         	tag.src = "https://www.youtube.com/iframe_api";
         	var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-			console.error("Youtube Initialized");
-		}
+        	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      	}
 
 		function onYouTubeIframeAPIReady() {
 			youtubeIframes.forEach((iframe) => {
@@ -84,20 +83,11 @@
 		}
 
 		function onPlayerReady(event) {
-			if (! event.target.getIframe().shuffle) { // this avoids setting the title to the first video in the playlist before shuffling
-				//setTitle(event.target.getIframe().id, event.target.getIframe().title);
-			}
 			event.target.setShuffle(event.target.getIframe().shuffle);
 
 			if (event.target.getIframe().autoplay) {
 	          	event.target.playVideoAt(0);
 				event.target.unMute();
-			}
-      	}
-
-		function onPlayerStateChange(event) {
-			if (event.data == YT.PlayerState.PLAYING) {
-				//setTitle(event.target.getIframe().id, event.target.getIframe().title);
 			}
 		}
 
@@ -105,13 +95,8 @@
 			console.log("youtube error: " + event.data + " + iframe: " + event.target.getIframe().id);
 			if (event.data == "150") {
 				console.log("video can't be embedded: iframe: " + event.target.getIframe().id + " title: " + event.target.getIframe().title);
-				//setTitle(event.target.getIframe().id, event.target.getIframe().title);
 			}
 		}
-
-		//function setTitle(iframeId, title) {
-			//unityGameInstance.SendMessage("YoutubeManager", "SetTitle", JSON.stringify([iframeId, title]));
-		//}
 
 		function handlePlayerClick(iframeId) {
 			var player = document.getElementById(iframeId).player;
@@ -128,14 +113,6 @@
 				case YT.PlayerState.ENDED: player.playVideo(); break;
 			}
 		}
-
-		//function handleNextButtonClick(iframeId) {
-			//document.getElementById(iframeId).player.nextVideo();
-		//}
-
-		//function handlePreviousButtonClick(iframeId) {
-			//document.getElementById(iframeId).player.previousVideo();
-		//}
     </script>
 
 	<!-- Import maps polyfill -->
@@ -202,7 +179,6 @@
 			iframe.shuffle = shuffle;
 
 			youtubeIframes.push(iframe);
-            console.error(iframe);
 
 			const object = new CSS3DObject(iframe);
 			object.position.set(x * unityToThreeScale, y * unityToThreeScale, -z * unityToThreeScale);
@@ -234,7 +210,6 @@
 
 			if (unityGameInstance) {
 				unityGameInstance.SendMessage('Player', 'ProcessInput');
-				console.log("Input Processing Started");
 			}
 
 			camera.position.set(cameraPositionVector.x * unityToThreeScale, 
