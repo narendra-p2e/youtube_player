@@ -109,13 +109,13 @@
 			console.log("youtube error: " + event.data + " + iframe: " + event.target.getIframe().id);
 			if (event.data == "150") {
 				console.log("video can't be embedded: iframe: " + event.target.getIframe().id + " title: " + event.target.getIframe().title);
-				setTitle(event.target.getIframe().id, event.target.getIframe().title);
+				//setTitle(event.target.getIframe().id, event.target.getIframe().title);
 			}
 		}
 
-		function setTitle(iframeId, title) {
-			unityGameInstance.SendMessage("YoutubeManager", "SetTitle", JSON.stringify([iframeId, title]));
-		}
+		//function setTitle(iframeId, title) {
+			//unityGameInstance.SendMessage("YoutubeManager", "SetTitle", JSON.stringify([iframeId, title]));
+		//}
 
 		function handlePlayerClick(iframeId) {
 			var player = document.getElementById(iframeId).player;
