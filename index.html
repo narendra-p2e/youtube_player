@@ -31,7 +31,7 @@
 		var cameraRotationEuler;
 		var unityGameInstance;
 		var scene;
-    	var addYoutubeIframe;
+		var addYoutubeIframe;
 		var youtubeIframes = [];
 		var youtubePlayers = [];
 		const unityToThreeScale = 100;
@@ -66,7 +66,11 @@
         	var firstScriptTag = document.getElementsByTagName('script')[0];
 			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 			console.error("Youtube Initialized");
-      	}
+		}
+
+        function consolelogg() {
+			console.error("Test Debugged from index");
+        }
 
 		function onYouTubeIframeAPIReady() {
 			youtubeIframes.forEach((iframe) => {
@@ -208,7 +212,7 @@
 			object.rotation.y = ry;
 			iframe.threeObject = object;
 			
-            unityGameInstance.SendMessage('ScreenMediaController', 'youtubeIframeCreated');
+            //unityGameInstance.SendMessage('ScreenMediaController', 'youtubeIframeCreated');
 			return object;
 		}
 
