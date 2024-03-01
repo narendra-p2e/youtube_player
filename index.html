@@ -206,6 +206,7 @@
 			iframe.shuffle = shuffle;
 
 			youtubeIframes.push(iframe);
+            console.error(iframe);
 
 			const object = new CSS3DObject(iframe);
 			object.position.set(x * unityToThreeScale, y * unityToThreeScale, -z * unityToThreeScale);
